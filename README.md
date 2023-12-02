@@ -19,4 +19,8 @@ pipenv install
 
 ## Usage
 
-...
+To run the server, enter `pipenv shell` and run:
+
+```
+python manage.py runserver
+```
