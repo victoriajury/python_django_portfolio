@@ -1,0 +1,67 @@
+{% extends "base_project.html" %}
+{% load static %}
+
+{% block page_title %}Portfolio Project: {{ project.title }}{% endblock page_title %}
+
+{% block page_content %}
+<main id="main">
+
+    <!-- ======= Portfolio Details ======= -->
+    <div id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8">
+            <h2 class="portfolio-title">{{ project.title }}</h2>
+
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-01.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-02.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-mobile-mockup.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-04.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 portfolio-info">
+            <h3>About this project:</h3>
+            <p class="pb-4">
+                {{ project.description }}
+            </p>
+            
+            <h3>Project details</h3>
+            <ul>
+              <li><strong>Category</strong>: {{ project.category }}</li>
+              <li><strong>Client</strong>: Client</li>
+              <li><strong>Project date</strong>: {{ project.date }}</li>
+              <li><strong>Project URL</strong>: <a target="_blank" href="{{ project.url }}">{{ project.url }}</a></li>
+            </ul>
+
+            
+          </div>
+
+        </div>
+
+      </div>
+    </div><!-- End Portfolio Details -->
+
+  </main><!-- End #main -->
+
+{% endblock page_content %}
