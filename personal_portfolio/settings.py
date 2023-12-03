@@ -51,6 +51,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+X_FRAME_OPTIONS = "SAMEORIGIN" # This is not the default value of X_FRAME_OPTIONS
+
 ROOT_URLCONF = "personal_portfolio.urls"
 
 TEMPLATES = [
