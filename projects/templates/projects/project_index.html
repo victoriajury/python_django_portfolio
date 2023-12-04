@@ -33,7 +33,7 @@
               <h4>{{ project.title }}</h4>
               <p>{{ project.get_category_display }}</p>
               <div class="portfolio-links">
-                <a href="{% static 'pages/img/portfolio/portfolio-visit-lynton-lynmouth.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ project.title }}"><i class="bx bx-plus"></i></a>
+                <a href="{{ project.coverimage.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ project.title }}"><i class="bx bx-plus"></i></a>
                 <a href="{% url 'project_detail' project.pk %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
