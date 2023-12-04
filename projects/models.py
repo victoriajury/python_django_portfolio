@@ -10,7 +10,7 @@ def project_image_directory(instance, filename):
 class Project(models.Model):
     CATEGORIES = [("web", "Web Design"), ("mobile", "Mobile"), ("wordpress", "Wordpress"), ("ecommerce", "E-commerce")]
     title = models.CharField(max_length=100)
-    shortname = models.CharField(max_length=50)
+    shortname = models.CharField(max_length=50, help_text="Short name for the project, lowercase, hyphenated. Also serves as name for media folder.")
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORIES, default="web")
     client = models.CharField(max_length=100)
