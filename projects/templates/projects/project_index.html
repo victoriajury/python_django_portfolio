@@ -26,7 +26,9 @@
         {% for project in projects %}
         <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.category|slugify }}">
           <div class="portfolio-wrap">
-            <img src="{% static 'pages/img/portfolio/portfolio-visit-lynton-lynmouth.jpg' %}" class="img-fluid" alt="">
+            {% if project.coverimage %}
+            <img src="{{ project.coverimage.url }}" class="img-fluid" alt="">
+            {% endif %}
             <div class="portfolio-info">
               <h4>{{ project.title }}</h4>
               <p>{{ project.category }}</p>

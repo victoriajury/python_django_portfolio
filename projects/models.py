@@ -8,3 +8,4 @@ class Project(models.Model):
     category = models.CharField(max_length=20)
     date = models.CharField(max_length=20)
     url = models.URLField(blank=True)
+    coverimage = models.FileField(upload_to="project_images/", blank=True)
