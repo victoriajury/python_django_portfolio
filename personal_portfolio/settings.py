@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # local apps
     "pages.apps.PagesConfig",
     "projects.apps.ProjectsConfig",
@@ -53,7 +52,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-X_FRAME_OPTIONS = "SAMEORIGIN" # This is not the default value of X_FRAME_OPTIONS
+X_FRAME_OPTIONS = "SAMEORIGIN"  # This is not the default value of X_FRAME_OPTIONS
 
 ROOT_URLCONF = "personal_portfolio.urls"
 
