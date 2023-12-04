@@ -17,23 +17,13 @@
 
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-
+                {% for image in project_images %}
+                {% if image %}
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-01.jpg" alt="">
+                  <img src="{{ image.url }}" alt="">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-02.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-mobile-mockup.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-detail-castle-hill/castle-hill-04.jpg" alt="">
-                </div>
-
+                {% endif %}
+                {% endfor %}
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -48,8 +38,8 @@
             
             <h3>Project details</h3>
             <ul>
-              <li><strong>Category</strong>: {{ project.category }}</li>
-              <li><strong>Client</strong>: Client</li>
+              <li><strong>Category</strong>: {{ project.get_category_display }}</li>
+              <li><strong>Client</strong>: {{ project.client }}</li>
               <li><strong>Project date</strong>: {{ project.date }}</li>
               <li><strong>Project URL</strong>: <a target="_blank" href="{{ project.url }}">{{ project.url }}</a></li>
             </ul>
