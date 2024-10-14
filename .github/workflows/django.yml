@@ -32,4 +32,4 @@ jobs:
         pipenv run isort .
     - name: Run Tests
       run: |
-        python manage.py test
+        pipenv run python manage.py test
