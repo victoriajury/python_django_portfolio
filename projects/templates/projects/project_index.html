@@ -30,12 +30,12 @@
             <img src="{{ project.coverimage.url }}" class="img-fluid" alt="">
             {% endif %}
             <div class="portfolio-info">
-              <h4>{{ project.title }}</h4>
+              <h4>
+                <a href="{% url 'project_detail' project.pk %}" data-gallery="portfolioGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="{{ project.title }}">
+                {{ project.title }}
+                </a>
+              </h4>
               <p>{{ project.get_category_display }}</p>
-              <div class="portfolio-links">
-                <a href="{{ project.coverimage.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ project.title }}"><i class="bx bx-plus"></i></a>
-                <a href="{% url 'project_detail' project.pk %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
             </div>
           </div>
         </div>

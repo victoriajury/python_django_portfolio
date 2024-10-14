@@ -33,15 +33,15 @@
           <div class="col-lg-4 portfolio-info">
             <h3>About this project:</h3>
             <p class="pb-4">
-                {{ project.description }}
+                {{ project.description|safe }}
             </p>
             
             <h3>Project details</h3>
             <ul>
               <li><strong>Category</strong>: {{ project.get_category_display }}</li>
               <li><strong>Client</strong>: {{ project.client }}</li>
-              <li><strong>Project date</strong>: {{ project.date }}</li>
-              <li><strong>Project URL</strong>: <a target="_blank" href="{{ project.url }}">{{ project.url }}</a></li>
+              <li><strong>Project date</strong>: {{ project.date|date:"F, Y" }}</li>
+              <li><strong>Project URL</strong>: <a target="_blank" href="{{ project.url }}">{{ project.link_text }}</a></li>
             </ul>
 
             
