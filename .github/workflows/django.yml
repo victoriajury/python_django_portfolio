@@ -12,8 +12,9 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: ["3.11"]
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+    runs:
+      using: 'node20'
+      main: 'main.js'
 
     steps:
     - uses: actions/checkout@v4
