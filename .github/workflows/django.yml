@@ -12,9 +12,6 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: ["3.11"]
-    runs:
-      using: 'node20'
-      main: 'main.js'
 
     steps:
     - uses: actions/checkout@v4
