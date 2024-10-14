@@ -26,10 +26,10 @@ jobs:
         pipenv install --dev
     - name: Linting
       run: |
-        pipenv run black -l 120
-        pipenv run flake8
-        pipenv run mypy
-        pipenv run isort
+        pipenv run black -l 120 .
+        pipenv run flake8 .
+        pipenv run mypy .
+        pipenv run isort .
     - name: Run Tests
       run: |
         python manage.py test
