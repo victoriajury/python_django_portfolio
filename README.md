@@ -2,11 +2,15 @@
 
 Project to familiarise myself with the Django web framework. This project will be a portfolio website to showcase my other website projects and CV.
 
+![Homepage](./docs/screenshot_1.png)
+
+![Project portfolio](./docs/screenshot_2.png)
+
 I followed the tutorial at <https://realpython.com/get-started-with-django-1/> to get started.
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.11+
 - pip
 - pipenv
 
@@ -31,12 +35,3 @@ To run the server, enter `pipenv shell` and run:
 ```bash
 python manage.py runserverpython manage.py runserver
 ```
-
-## TODO
-
-- [ ] Add function to organise projects by date or order number
-- [ ] Re-name media folders if change made to project shortname
-- [ ] Add a blog
-- [ ] Add a contact form
-- [ ] Add tests
-- [ ] Upload to a production server
