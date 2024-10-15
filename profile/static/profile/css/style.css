@@ -41,7 +41,7 @@ a {
 }
 
 a:hover {
-  color: #2883d3;
+  color: #144b81;
   text-decoration: none;
 }
 
@@ -126,6 +126,18 @@ h6 {
 
 #header .social-links a:hover {
   background: #2079c7;
+}
+
+#resume .social-links {
+  padding-left: 6px;
+  padding-bottom: 5px;
+  display: flex;
+}
+
+#resume .social-links a i {
+  font-size: 26px;
+  vertical-align: middle;
+  padding-bottom: 3px;
 }
 
 @media (max-width: 992px) {

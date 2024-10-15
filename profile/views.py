@@ -1,5 +1,6 @@
+from profile.models import ResumeEducation, ResumeExperience, ResumeSkill, ResumeSummary
+
 from django.shortcuts import render
-from pages.models import ResumeEducation, ResumeExperience, ResumeSkill, ResumeSummary
 
 
 def home(request):
@@ -15,4 +16,4 @@ def home(request):
         "language_skills": languages,
         "experience": resume_experience,
     }
-    return render(request, "pages/resume.html", context)
+    return render(request, "profile/resume.html", context)

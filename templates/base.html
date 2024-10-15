@@ -12,22 +12,22 @@
   <meta content="web design, developer, full-stack, python, software engineer, php, javascript" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'pages/img/favicon.ico' %}" rel="icon">
-  <link href="{% static 'pages/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'profile/img/favicon.ico' %}" rel="icon">
+  <link href="{% static 'profile/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Merriweather:700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'pages/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'pages/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'profile/css/style.css' %}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Personal
@@ -43,8 +43,8 @@
   <!-- ======= Header ======= -->
   <header id="header" {% if 'projects' in request.path %} class="header-top"{% endif %}>
     <div class="container">
-      <h1><a href="/" class="mr-auto"><img src="{% static 'pages/img/logo.png' %}" alt="" class="img-fluid"></a>
-      <a href="/">Victoria Jury</a></h1>
+      <h1><a href="/" class="mr-auto"><img src="{% static 'profile/img/logo.png' %}" alt="" class="img-fluid"></a>
+      <a href="/">{{ summary.name }}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <h2>I'm a passionate <span>software engineer</span> and web developer</h2>
 
@@ -58,8 +58,9 @@
       </nav><!-- .navbar -->
 
       <div class="social-links">
-        <a target="_blank" href="https://www.linkedin.com/in/victoriaejury/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a target="_blank" href="https://github.com/victoriajury" class="github"><i class="bi bi-github"></i></a>
+        
+        <a target="_blank" href="{{ summary.linkedin_profile }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a target="_blank" href="{{ summary.github_profile }}" class="github"><i class="bi bi-github"></i></a>
       </div>
 
     </div>
@@ -81,16 +82,16 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'pages/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'pages/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'pages/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'pages/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'pages/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'pages/vendor/waypoints/noframework.waypoints.js' %}"></script>
-  <script src="{% static 'pages/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'profile/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'profile/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'profile/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'profile/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'profile/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'profile/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'profile/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'pages/js/main.js' %}"></script>
+  <script src="{% static 'profile/js/main.js' %}"></script>
 
 </body>
 

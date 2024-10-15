@@ -18,13 +18,17 @@
           <div class="resume-item pb-0">
             <h4>{{ summary.name }}</h4>
             <p><em>{{ summary.bio }}</em></p>
-            <ul>
+            <ul class="mb-1">
               <li>{{ summary.address }}</li>
               <li>{{ summary.telephone }}</li>
               <li>
                 {{ summary.email|obfuscate_mailto }}
               </li>
             </ul>
+            <div class="social-links ml-3">
+              <a target="_blank" href="{{ summary.linkedin_profile}}" class="linkedin pe-4"><i class="bi bi-linkedin pe-1"></i> LinkedIn</a>
+              <a target="_blank" href="{{ summary.github_profile }}" class="github"><i class="bi bi-github pe-1"></i> Github</a>
+            </div>
           </div>
 
           <h3 class="resume-title">Education</h3>
