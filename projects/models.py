@@ -18,7 +18,7 @@ class Project(models.Model):
     shortname = models.CharField(
         max_length=50,
         help_text="URL short name for the project, lowercase, hyphenated. Also serves as name for media folder.",
-        primary_key=True
+        primary_key=True,
     )
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORIES, default="web")
