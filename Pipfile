@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+django-email-obfuscator = "*"
 
 [dev-packages]
 black = "*"

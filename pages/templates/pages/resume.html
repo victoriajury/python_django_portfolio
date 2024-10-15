@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% load email_obfuscator %}
+{% block resume_page_content %}
+
+<!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Work Experience</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">Summary</h3>
+          <div class="resume-item pb-0">
+            <h4>{{ summary.name }}</h4>
+            <p><em>{{ summary.bio }}</em></p>
+            <ul>
+              <li>{{ summary.address }}</li>
+              <li>{{ summary.telephone }}</li>
+              <li>
+                {{ summary.email|obfuscate_mailto }}
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          
+          {% for edu in education %}
+          <div class="resume-item">
+            <h4>{{ edu.location }}</h4>
+            <h5>{{ edu.date_attended}}</h5>
+            {{ edu.study_details|safe }}
+          </div>
+          {% endfor %}
+
+          <h3 class="resume-title">Skills</h3>
+          <div class="resume-item pb-0">
+            <h4>Technical Skills</h4>
+              <ul>
+              {% for s in technical_skills %}
+                <li>{{ s.skill }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="resume-item pb-0">
+            <h4>Languages</h4>
+              <ul>
+              {% for s in language_skills %}
+                <li>{{ s.skill }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="resume-title">Professional Experience</h3>
+          {% for exp in experience %}          
+          <div class="resume-item">
+            <h4>{{ exp.role }}</h4>
+            <h5>{{ exp.date_attended }}</h5>
+            <p><em>{{ exp.location }}</em></p>
+            {{ exp.role_details|safe }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Resume Section -->
+
+{% endblock resume_page_content %}
