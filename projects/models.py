@@ -17,7 +17,8 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     shortname = models.CharField(
         max_length=50,
-        help_text="Short name for the project, lowercase, hyphenated. Also serves as name for media folder.",
+        help_text="URL short name for the project, lowercase, hyphenated. Also serves as name for media folder.",
+        primary_key=True,
     )
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORIES, default="web")
@@ -28,7 +29,7 @@ class Project(models.Model):
     coverimage = models.FileField("Cover Image", upload_to="project_images/", blank=True)
 
 
-# Add image fields to the database
+# Add image fields to the Project model
 for i in range(1, IMAGE_COUNT + 1):
     Project.add_to_class(
         "image%s" % i,
