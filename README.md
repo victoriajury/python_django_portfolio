@@ -33,5 +33,13 @@ python manage.py migrate
 To run the server, enter `pipenv shell` and run:
 
 ```bash
-python manage.py runserverpython manage.py runserver
+python manage.py runserver
+```
+
+## Run the tests
+
+To run the tests, enter `pipenv shell` and run:
+
+```bash
+python manage.py test
 ```
