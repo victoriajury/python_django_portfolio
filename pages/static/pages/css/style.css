@@ -903,8 +903,9 @@ section .container {
   transition: 0.3s;
 }
 
+.portfolio .portfolio-wrap .portfolio-info h4 a:hover,
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #2883d3;
+  color: #4aa6f7;
 }
 
 .portfolio .portfolio-wrap:hover::before {

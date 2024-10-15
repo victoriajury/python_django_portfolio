@@ -1,12 +1,19 @@
 from django.db import models
 
+IMAGE_COUNT = 10
+
 
 def project_image_directory(instance, filename):
     return f"project_images/{instance.shortname}/{filename}"
 
 
 class Project(models.Model):
-    CATEGORIES = [("web", "Web Design"), ("mobile", "Mobile"), ("wordpress", "Wordpress"), ("ecommerce", "E-commerce")]
+    CATEGORIES = [
+        ("web", "Web Design"),
+        ("mobile", "Mobile"),
+        ("wordpress", "Wordpress"),
+        ("ecommerce", "E-commerce"),
+    ]
     title = models.CharField(max_length=100)
     shortname = models.CharField(
         max_length=50,
@@ -15,11 +22,15 @@ class Project(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORIES, default="web")
     client = models.CharField(max_length=100)
-    date = models.CharField(max_length=20)
+    date = models.DateField(max_length=20)
+    link_text = models.CharField(max_length=100, blank=True)
     url = models.URLField(blank=True)
     coverimage = models.FileField("Cover Image", upload_to="project_images/", blank=True)
-    image1 = models.FileField("Image 1", upload_to=project_image_directory, blank=True)
-    image2 = models.FileField("Image 2", upload_to=project_image_directory, blank=True)
-    image3 = models.FileField("Image 3", upload_to=project_image_directory, blank=True)
-    image4 = models.FileField("Image 4", upload_to=project_image_directory, blank=True)
-    image5 = models.FileField("Image 5", upload_to=project_image_directory, blank=True)
+
+
+# Add image fields to the database
+for i in range(1, IMAGE_COUNT + 1):
+    Project.add_to_class(
+        "image%s" % i,
+        models.FileField(f"Image {i}", upload_to=project_image_directory, blank=True),
+    )
