@@ -1,5 +1,6 @@
+from profile.models import ResumeEducation, ResumeExperience, ResumeSkill, ResumeSummary
+
 from django.contrib import admin
-from pages.models import ResumeEducation, ResumeExperience, ResumeSkill, ResumeSummary
 
 
 class ResumeAdminSummary(admin.ModelAdmin):
