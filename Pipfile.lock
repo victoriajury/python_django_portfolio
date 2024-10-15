@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f2e0f95e2cafd500e2a1e9accc086889be2554491dce81c6582187c0225376d0"
+            "sha256": "366e8aadaad69952944187e1559a94004800b6c4eb26fff16f1a9418ae966735"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,6 +32,13 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==5.1.2"
+        },
+        "django-email-obfuscator": {
+            "hashes": [
+                "sha256:055d5251ebfb4aa3431c238927461e6b4bd501f937b5207cd175f7ea50519f32"
+            ],
+            "index": "pypi",
+            "version": "==0.1.5"
         },
         "sqlparse": {
             "hashes": [

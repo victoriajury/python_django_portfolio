@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "email_obfuscator",
+
     # local apps
     "pages.apps.PagesConfig",
     "projects.apps.ProjectsConfig",
