@@ -8,15 +8,15 @@ class ResumeAdminSummary(admin.ModelAdmin):
 
 
 class ResumeAdminEducation(admin.ModelAdmin):
-    list_display = ["location", "date_attended"]
+    list_display = ["location", "date_attended", "position"]
 
 
 class ResumeAdminSkills(admin.ModelAdmin):
-    list_display = ["skill", "category"]
+    list_display = ["skill", "category", "position"]
 
 
 class ResumeAdminExperience(admin.ModelAdmin):
-    list_display = ["role", "date_attended", "location"]
+    list_display = ["role", "date_attended", "location", "position"]
 
 
 admin.site.register(ResumeSummary, ResumeAdminSummary)

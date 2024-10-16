@@ -18,6 +18,7 @@ class ResumeEducation(models.Model):
     location = models.CharField(max_length=100)
     date_attended = models.CharField(max_length=50)
     study_details = models.TextField()
+    position = models.IntegerField()
 
     class Meta:
         verbose_name_plural = "Resume Education"
@@ -26,6 +27,7 @@ class ResumeEducation(models.Model):
 class ResumeSkill(models.Model):
     category = models.CharField(max_length=100)
     skill = models.CharField(max_length=50)
+    position = models.IntegerField()
 
     class Meta:
         verbose_name_plural = "Resume Skills"
@@ -36,6 +38,7 @@ class ResumeExperience(models.Model):
     date_attended = models.CharField(max_length=50)
     location = models.CharField(max_length=100)
     role_details = models.TextField()
+    position = models.IntegerField()
 
     class Meta:
         verbose_name_plural = "Resume Experience"
