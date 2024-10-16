@@ -10,23 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+production = (os.environ.get("DJANGO_PROD", False) == 'True')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-@u6l)147co=_wij&h)5bw7zc26u3)_2dt$yn)st!#9jqo!%lm^"
+if production:
+    SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+else:
+    SECRET_KEY = "django-insecure-(yd%w7y8m=j0fwpqz-j&_(86vo74uh_m^+)gqn703kr-i@@80("
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False if production else True
 
-ALLOWED_HOSTS: list[str] = ["127.0.0.1", "vhwebdesign.co.uk"]
+ALLOWED_HOSTS: list[str] = []
+if production:
+    ALLOWED_HOSTS = [
+        "vhwebdesign.co.uk",
+        "portfolio.vhwebdesign.co.uk",
+    ]
 
 
 # Application definition
@@ -61,9 +69,7 @@ ROOT_URLCONF = "personal_portfolio.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            BASE_DIR / "templates/",
-        ],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -124,16 +130,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
-
-MEDIA_ROOT = BASE_DIR / "uploads/"
-MEDIA_URL = "media/"
+if production:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = "/home2/uyupym/portfolio.vhwebdesign.co.uk/static/"
+    MEDIA_URL = "/uploads/"
+    MEDIA_ROOT = "/home2/uyupym/portfolio.vhwebdesign.co.uk/uploads/"
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    STATIC_URL = "static/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+    MEDIA_URL = "media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-# Make sure that BASE_DIR is defined somewhere at the top
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
