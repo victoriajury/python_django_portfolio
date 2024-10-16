@@ -29,11 +29,13 @@ class ResumeEducationTestCase(TestCase):
             location="Some school1",
             date_attended="2010 - 2012",
             study_details="Certificates, exams, degrees",
+            position=1
         )
         cls.edu2 = ResumeEducation.objects.create(
             location="Some school2",
             date_attended="2013 - 2018",
             study_details="Certificates, exams, degrees",
+            position=2
         )
 
     def test_education_created(self):
@@ -49,10 +51,12 @@ class ResumeSkillTestCase(TestCase):
         cls.skill1 = ResumeSkill.objects.create(
             category="Technical skills",
             skill="Python",
+            position=1
         )
         cls.skill2 = ResumeSkill.objects.create(
             category="Languages",
             skill="French",
+            position=2
         )
 
     def test_skill_created(self):
@@ -70,12 +74,14 @@ class ResumeExperienceTestCase(TestCase):
             date_attended="2020 - 2021",
             location="Some Company Ltd",
             role_details="Testing, developing software, REST APIs",
+            position=1
         )
         cls.exp2 = ResumeExperience.objects.create(
             role="Website Developer",
             date_attended="2021 - 2024",
             location="Another Enterprise Ltd",
             role_details="Testing, developing software, REST APIs",
+            position=2
         )
 
     def test_experience_created(self):
