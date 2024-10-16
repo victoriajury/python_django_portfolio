@@ -12,7 +12,7 @@ class Project(models.Model):
         ("web", "Web Design"),
         ("mobile", "Mobile"),
         ("wordpress", "Wordpress"),
-        ("ecommerce", "E-commerce"),
+        ("e-commerce", "E-commerce"),
     ]
     title = models.CharField(max_length=100)
     shortname = models.CharField(
