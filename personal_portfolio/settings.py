@@ -38,7 +38,9 @@ ALLOWED_HOSTS: list[str] = []
 if production:
     ALLOWED_HOSTS = [
         "vhwebdesign.co.uk",
+        "www.vhwebdesign.co.uk",
         "portfolio.vhwebdesign.co.uk",
+        "www.portfolio.vhwebdesign.co.uk",
     ]
 
 
