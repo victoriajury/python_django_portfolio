@@ -67,6 +67,7 @@ MIDDLEWARE = [
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"  # This is not the default value of X_FRAME_OPTIONS
+PREPEND_WWW = True
 
 ROOT_URLCONF = "personal_portfolio.urls"
 
