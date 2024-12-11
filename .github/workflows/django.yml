@@ -24,6 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install --dev
+        pipenv graph
     - name: Linting
       run: |
         pipenv run black -l 120 .
