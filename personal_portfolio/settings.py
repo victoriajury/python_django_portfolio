@@ -19,7 +19,7 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-USERNAME = os.environ.get("USERNAME")
+USERNAME = os.environ.get("USER")
 production = os.environ.get("DJANGO_PROD", False) == "True"
 
 # Quick-start development settings - unsuitable for production
@@ -140,9 +140,9 @@ USE_TZ = True
 
 if production:
     STATIC_URL = "/static/"
-    STATIC_ROOT = "~/public_html/static/"
+    STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
     MEDIA_URL = "/uploads/"
-    MEDIA_ROOT = "~/public_html/uploads/"
+    MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATIC_URL = "/static/"
