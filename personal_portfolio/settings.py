@@ -142,7 +142,7 @@ if production:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATIC_URL = "static/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
-    MEDIA_URL = "media/"
+    MEDIA_URL = "uploads/"
 
     # STATIC_URL = "/static/"
     # STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
