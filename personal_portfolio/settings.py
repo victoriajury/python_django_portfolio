@@ -140,9 +140,9 @@ USE_TZ = True
 
 if production:
     STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
-    STATIC_URL = "/home2/{USERNAME}/public_html/static/"
+    STATIC_URL = "/static/"
     MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
-    MEDIA_URL = "/home2/{USERNAME}/public_html/uploads/"
+    MEDIA_URL = "/uploads/"
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATIC_URL = "static/"
