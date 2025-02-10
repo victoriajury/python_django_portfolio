@@ -139,10 +139,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 if production:
-    STATIC_URL = "/static/"
-    STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
-    MEDIA_URL = "/uploads/"
-    MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    STATIC_URL = "static/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+    MEDIA_URL = "media/"
+
+    # STATIC_URL = "/static/"
+    # STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
+    # MEDIA_URL = "/uploads/"
+    # MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATIC_URL = "/static/"
