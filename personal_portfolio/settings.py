@@ -139,20 +139,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 if production:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
-    STATIC_URL = "../public_html/static/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
-    MEDIA_URL = "../public_html/uploads/"
-
-    # STATIC_URL = "/static/"
-    # STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
-    # MEDIA_URL = "/uploads/"
-    # MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
+    STATIC_ROOT = "/home2/{USERNAME}/public_html/static/"
+    STATIC_URL = "/home2/{USERNAME}/public_html/static/"
+    MEDIA_ROOT = "/home2/{USERNAME}/public_html/uploads/"
+    MEDIA_URL = "/home2/{USERNAME}/public_html/uploads/"
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
-    STATIC_URL = "/static/"
+    STATIC_URL = "static/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
-    MEDIA_URL = "/media/"
+    MEDIA_URL = "media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
